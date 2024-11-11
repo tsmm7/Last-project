@@ -1,0 +1,247 @@
+/* Отвечает за текст */
+.content-section {
+  color: var(--text-color);
+  padding: 0 6vw 0 6vw;
+  line-height: 1.6;
+}
+
+.content__title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: 5vw;
+  margin-bottom: 2.5vw;
+  font-family: var(--accent-font);
+}
+
+.content__text-block {
+  font-size: 1.4rem;
+  font-family: var(--main-font);
+}
+
+.content__paragraph {
+  margin-bottom: 1em;
+}
+
+
+.content__text-block a {
+  color: inherit; 
+  text-decoration: underline; 
+}
+
+.content__text-block_type_first-lettered
+.content__paragraph:first-child::first-letter {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  padding: 0 4px;
+  margin-right: 5px;
+  line-height: 1;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
+  color: var(--text-color);
+  border: 1px solid var(--text-color); /* добавляем рамку */
+  background-color: transparent; /* прозрачный фон */
+  padding: 2px 4px; /* можно немного увеличить padding для баланса */
+}
+/* Цитата */
+
+.content__blockquote-wrapper {
+  display: flex; 
+  justify-content: center; 
+} 
+
+.content__blockquote {
+  width: 75%; 
+  margin: 1.5em auto; 
+  font-style: italic; 
+  color: var(--text-color);
+  font-size: 1em; 
+  line-height: 1.8; 
+  display: flex;
+  justify-content: center;
+  font-family: var(--main-font);
+  position: relative; 
+  padding: 0 1em; 
+  display: inline-block;
+}
+
+.content__blockquote::before {
+  content: "«"; 
+  font-size: 1em; 
+  margin-right: -0.27em ;
+  color: var(--text-color); 
+}
+
+.content__blockquote::after {
+  content: "»"; 
+  font-size: 1em; 
+  margin-left: -0.27em;
+  color: var(--text-color); 
+}
+/* Картинки */
+.content__figure {
+  width: calc(100% + 2.263 * 5vw);
+  position: relative;
+  left: -6vw;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+.content__figure .content__picture {
+  width: 100%;
+  display: block;
+}
+
+.content__picture-caption {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+/* Карточки */
+.content__card {
+  aspect-ratio: 4 / 3;
+  margin-top: 7vw;
+  border: 1px solid currentColor;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.content__card-title {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--accent-font);
+  font-size: 60px;
+}
+
+.content__card-subtitle {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-top: -25px;
+  font-size: 18px;
+
+}
+
+.colored-text {
+  position: relative;
+  color: var(--text-color);
+}
+
+/* Линия под use an old idea */
+.colored-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15em; 
+  height: 0.3em; 
+  background-color: var(--accent-color); 
+  z-index: -1;
+  border-radius: 0.1em; 
+}
+
+.theme_dark .colored-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15em;
+  height: 0.3em;
+  background-image: url('../images/pattern.svg'); 
+  z-index: -1;
+  border-radius: 0.1em;
+}
+
+
+/* стили для списка */
+.content__list {
+  list-style: none; 
+  padding-inline-start: 40px; 
+  margin: 0;
+}
+
+.content__list li {
+  position: relative; 
+  padding-left: 25px; 
+  margin-bottom: 10px; 
+}
+
+
+.content__list li:last-child {
+  margin-bottom: 0;
+}
+
+/* псевдоэлемент для маркера */
+.content__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/marker-light.svg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.theme_dark .content__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-image: url('../images/marker-dark.svg'); /* Замените на темную версию маркера */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Медиа запрос */
+
+@media (max-width: 768px){
+  .content__title{
+    line-height: 1.2;
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .content__blockquote{
+    font-size: 18px; 
+  }
+
+  .content__list{
+    font-size: 16px;
+  }
+  .content__list li{
+    left: -30px;
+  }
+  
+  .colored-text{
+    display: inline-block;
+  }
+  .content__card-title{
+    line-height: 0.9;
+    text-align: center;
+  }
+  .content__card-subtitle{
+    margin-top: -7px;
+  }
+
+}

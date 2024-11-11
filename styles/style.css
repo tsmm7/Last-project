@@ -1,0 +1,46 @@
+@import url(../fonts/fonts.css);
+@import url(./header.css);
+@import url(./main.css);
+@import url(./footer.css);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+:root{
+  --bg-color:#F3EFEC;
+  --text-color:#312A4E;
+  --accent-color:#FFAB6B;
+  --main-font: 'Raleway';
+  --accent-font: 'STIX Two Text', STIXTwoText-SemiBold;
+  
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent; 
+}
+
+
